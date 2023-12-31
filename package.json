@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon server/index.js",
-    "build": "node server/index.js",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "build": "echo 'No build step needed'"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
