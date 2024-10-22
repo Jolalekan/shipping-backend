@@ -21,6 +21,7 @@ const registerAdmin = async (req, res) => {
 
 const adminLogin = async (req, res) => {
     const { email, password } = req.body
+    
     try {
         const loginResult = await adminService.login(email, password, res)
 

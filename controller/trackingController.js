@@ -15,7 +15,7 @@ const trackGoods = async (req, res) => {
         res.status(500).json({ error: error.message })
     }
 }
-
+console.log(trackGoods)
 const editTrackingInfo = async (req, res) => {
     const trackingNumber = req.params.trackingNumber
     const updateInfo = req.body

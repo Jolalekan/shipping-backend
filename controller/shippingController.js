@@ -1,46 +1,62 @@
 const trackingService = require("../service/trackingService")
 
 const submitShipping = async (req, res) => {
+    console.log('Received shipping request:', req.body);
     try {
-        console.log('Received shipping request:', req.body);
 
-        const { dateOfShipping,
+        const { 
+            dateOfShipping,
             dateOfDelivery,
-            country,
-            sender,
-            receiver,
+            senderCountry,
+            receiverCountry,
+            receiverName,
+            receiverSurname,
             sendAddress,
+            sendState,
+            senderCity,
+            receiverCity,        
+            receiverPhone,
+            receivePostCode,
             receiveAddress,
-            no,
+            receiveState,
+            sendPostCode,
+            senderPhone,
             qty,
             content,
             service,
             weight,
             date,
-            activities,
             location,
-            details
-
-        } = req.body.formData;
+            details,
+            activities,
+        } = req.body;
         const trackingNumber = trackingService.generateUniqueTrackingNumber();
 
         const result = await trackingService.saveTrackingInfo(trackingNumber, {
             dateOfShipping,
             dateOfDelivery,
-            country,
-            sender,
-            receiver,
+            senderCountry,
+            receiverCountry,
+            receiverName,
+            receiverSurname,
             sendAddress,
+            sendState,
+            senderCity,
+            receiverCity,        
+            receiverPhone,
+            receivePostCode,
             receiveAddress,
-            no,
+            receiveState,
+            sendPostCode,
+            senderPhone,
             qty,
             content,
             service,
             weight,
             date,
-            activities,
             location,
-            details
+            details,
+            activities,
         });
 
         console.log('Shipping info saved. Response:', result);
