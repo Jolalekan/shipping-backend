@@ -39,7 +39,7 @@ const getShippingList = () => {
     try {
         return Tracking.find()
     } catch (error) {
-        console.error("Error fetching shipping info", error)
+        console.error("Error fetching shipping info", error.message)
         throw new Error("Internal server error")
     }
 }

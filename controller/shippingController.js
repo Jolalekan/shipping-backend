@@ -29,6 +29,7 @@ const submitShipping = async (req, res) => {
             location,
             details,
             activities,
+        
         } = req.body;
         const trackingNumber = trackingService.generateUniqueTrackingNumber();
 
@@ -57,13 +58,14 @@ const submitShipping = async (req, res) => {
             location,
             details,
             activities,
+            trackingNumber
         });
 
         console.log('Shipping info saved. Response:', result);
-        res.json(result);
+      return res.json(result);
     } catch (error) {
         console.error('Error submitting shipping:', error);
-        res.status(500).json({ error: error.message });
+       return res.status(500).json({ error: error.message });
     }
 };
 
@@ -71,6 +73,7 @@ const shipList = async(req, res)=>{
 
     try {
             const shipping = await trackingService.getShippingList()
+            console.log("shipping",shipping)
             res.json(shipping)
 
     } catch (error) {
