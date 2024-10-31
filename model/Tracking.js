@@ -25,7 +25,7 @@ const trackingSchema = new Schema({
     date: { type: Date, required: true },
     location: { type: String, required: true },
     details: { type: String, required: true },
-    activities: { type: String, required: true },
+    status: { type: String, required: true },
     trackingNumber: { type: String, unique: true },
     createdAt: { type: Date, default: Date.now },
 

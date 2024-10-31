@@ -28,7 +28,7 @@ const submitShipping = async (req, res) => {
             date,
             location,
             details,
-            activities,
+            status,
         
         } = req.body;
         const trackingNumber = trackingService.generateUniqueTrackingNumber();
@@ -57,7 +57,7 @@ const submitShipping = async (req, res) => {
             date,
             location,
             details,
-            activities,
+            status,
             trackingNumber
         });
 
